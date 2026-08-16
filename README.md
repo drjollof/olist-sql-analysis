@@ -12,10 +12,15 @@ This project is a clean, SQL-only analytical proof point using the Olist Brazili
 
 ## Methodology
 The analysis was conducted purely in standard SQL, querying 9 interconnected tables. Advanced SQL techniques utilized include:
-*   **Multi-table Joins (up to 5 tables):** Tracing the path from customers to orders, items, sellers, and reviews.
+
+*   **Multi-table Joins:** Tracing the path from customers to orders, items, sellers, and reviews.
+
 *   **Window Functions (`ROW_NUMBER`, `COUNT`):** Used extensively for cohort analysis to isolate the exact impact of a customer's *first* delivery experience.
+
 *   **Common Table Expressions (CTEs) & Self-Joins:** Used to stage complex logic, calculate running averages, and determine the time elapsed between sequential orders for repeat buyers.
+
 *   **Data Validation:** Findings were manually spot-checked against raw row data to verify mathematical accuracy before synthesis.
+
 ## Database Schema (ERD)
 ```mermaid
 erDiagram
@@ -56,5 +61,7 @@ erDiagram
 
 ## Repository Structure
 *   `/sql`: Contains the numbered, sequential SQL queries used for the analysis.
-*   `/docs`: Contains the final business recommendation ([findings_summary.md](docs/findings_summary.md)).
+
+*   `/docs`: Contains the final business recommendation ([findings_summary](docs/findings_summary.md)).
+
 *   `/data`: The raw CSV files can be downloaded directly from [Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).
